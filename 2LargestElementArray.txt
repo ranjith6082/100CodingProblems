@@ -1,0 +1,54 @@
+Find the Largest element in an array
+
+
+Example 1:
+Input:
+ arr[] = {2,5,1,3,0};
+Output:
+ 5
+Explanation:
+ 5 is the largest element in the array. 
+
+Example2:
+Input:
+ arr[] = {8,10,5,7,9};
+Output:
+ 10
+Explanation:
+ 10 is the largest element in the array. 
+
+
+
+
+package arrays;
+
+import java.util.Arrays;
+
+public class LargestElementArray {
+
+    public static void main(String[] args) {
+
+        int arr1[] = {2,5,1,3,0};
+        int arr2[] = {8,10,5,7,9};
+
+        //int result = LargestElement1(arr2);
+        int result = LargestElement2(arr2);
+        System.out.println("Largest Element: "+result);
+
+    }
+
+    static int LargestElement1(int arr[]){
+        Arrays.sort(arr);
+        return arr[arr.length-1];
+    }
+
+    static int LargestElement2(int arr[]){
+        int largestElement = arr[0];
+        for(int i=1;i < arr.length; i++){
+            if(arr[i] > largestElement){
+                largestElement = arr[i];
+            }
+        }
+        return largestElement;
+    }
+}
